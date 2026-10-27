@@ -1,0 +1,23 @@
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+@media (max-width: 820px) {
+  .tiers { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+}
+
+.tier {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 26px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+.feature { border-color: var(--accent); box-shadow: var(--shadow); position: relative; }
+.tag {
+  position: absolute; top: -11px; left: 26px; background: var(--accent); color: #fff;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px;
+}
+.name { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.price { font-family: var(--f-display); font-weight: 700; font-size: 32px; letter-spacing: -.02em; }
+.price small { font-size: 14px; font-weight: 500; color: var(--muted); font-family: var(--f-body); }
+.desc { color: var(--muted); font-size: 14px; }
+.tier ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; font-size: 14px; }
+.tier li { display: flex; gap: 10px; align-items: flex-start; }
+.tier li svg { flex: none; margin-top: 3px; color: var(--accent); }
+.tier :global(.btn) { margin-top: auto; }

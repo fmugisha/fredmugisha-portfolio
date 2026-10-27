@@ -1,0 +1,31 @@
+.flow {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  box-shadow: var(--shadow); padding: 22px; min-width: 0;
+}
+.title {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px; display: flex; justify-content: space-between;
+}
+.live { color: var(--accent); display: inline-flex; align-items: center; gap: 6px; }
+.live :global(.dot) { animation: blink 1.8s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+
+.svg { width: 100%; height: auto; display: block; }
+.svg text { font-family: var(--f-mono); font-size: 9px; }
+
+.arrow { fill: var(--muted); }
+.box { fill: var(--surface-2); stroke: var(--line); }
+.inputText { fill: var(--muted); }
+.connector { stroke: var(--line); stroke-width: 1.5; fill: none; }
+.pulse { fill: var(--accent); }
+.engine { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.engineText { fill: var(--accent-ink); }
+.connectorOut { stroke: var(--accent); stroke-width: 1.8; fill: none; }
+.output { fill: var(--surface-2); stroke: var(--accent); stroke-width: 1.5; }
+.outputText { fill: var(--fg); }
+
+.caption { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse { display: none; }
+}
