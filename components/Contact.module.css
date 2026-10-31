@@ -8,12 +8,20 @@
 .box h2 { font-size: clamp(24px, 3.4vw, 32px); }
 .box > p { color: var(--muted); margin-top: 12px; }
 
-.socials {
-  margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-  font-family: var(--f-mono); font-size: 13px;
+.socials { margin-top: 22px; display: flex; gap: 6px 10px; justify-content: center; flex-wrap: wrap; }
+.socials a {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 10px;
+  color: var(--muted);
+  transition: color .15s ease, transform .15s ease, filter .15s ease;
 }
-.socials a { color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; }
-.socials a:hover { color: var(--fg); border-color: var(--accent); }
+/* Each link sets --brand inline; hover/focus reveals the original brand color. */
+.socials a:hover,
+.socials a:focus-visible { color: var(--brand); transform: translateY(-2px); }
+/* TikTok's logo is monochrome with cyan/pink offsets. */
+.socials a[data-icon="tiktok"]:hover,
+.socials a[data-icon="tiktok"]:focus-visible {
+  filter: drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55);
+}
 
 @media (max-width: 480px) {
   .box { padding: 28px 18px; }

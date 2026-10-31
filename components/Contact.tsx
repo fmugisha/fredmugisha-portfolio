@@ -1,5 +1,7 @@
 import { site, socials } from "@/data/site";
+import type { CSSProperties } from "react";
 import CopyEmail from "./CopyEmail";
+import { SocialIcon } from "./SocialIcon";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
@@ -15,11 +17,21 @@ export default function Contact() {
           </p>
           <CopyEmail email={site.email} />
           <div className={styles.socials}>
-            {socials.map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
-                {social.label}
-              </a>
-            ))}
+            {socials
+              .filter((social) => social.href)
+              .map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  data-icon={social.icon}
+                  style={{ "--brand": social.color } as CSSProperties}
+                >
+                  <SocialIcon name={social.icon} />
+                </a>
+              ))}
           </div>
         </div>
       </div>

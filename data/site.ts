@@ -1,6 +1,8 @@
 // All page copy lives here so it can later be served from a database / CMS
 // without touching the components.
 
+import type { SocialIconName } from "@/components/SocialIcon";
+
 export type IconName = "sheet" | "workspace" | "web" | "check";
 
 export type Service = {
@@ -25,7 +27,7 @@ export type Package = {
 
 export type Fact = { label: string; value: string; detail: string };
 
-export type SocialLink = { label: string; href: string };
+export type SocialLink = { label: string; href: string; icon: SocialIconName; color: string };
 
 export const site = {
   name: "Fred Mugisha",
@@ -188,9 +190,14 @@ export const facts: Fact[] = [
   },
 ];
 
+// `color` is the brand color shown on hover. Links with an empty href are hidden.
 export const socials: SocialLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mugishafred/" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/~01772880203f50ed8c" },
+  { label: "WhatsApp", icon: "whatsapp", color: "#25D366", href: "https://wa.me/250788461008" },
+  { label: "Instagram", icon: "instagram", color: "#E4405F", href: "https://www.instagram.com/iamfredmugisha/" },
+  { label: "LinkedIn", icon: "linkedin", color: "#0A66C2", href: "https://www.linkedin.com/in/mugishafred/" },
+  { label: "TikTok", icon: "tiktok", color: "var(--fg)", href: "" },
+  { label: "Pinterest", icon: "pinterest", color: "#E60023", href: "https://www.pinterest.com/fmugisha10/" },
+  { label: "Upwork", icon: "upwork", color: "#14A800", href: "https://www.upwork.com/freelancers/~01772880203f50ed8c" },
   // TODO: swap for the public profile URL (fiverr.com/<username>).
-  { label: "Fiverr", href: "https://pro.fiverr.com/?source=top_nav" },
+  { label: "Fiverr", icon: "fiverr", color: "#1DBF73", href: "https://pro.fiverr.com/?source=top_nav" },
 ];

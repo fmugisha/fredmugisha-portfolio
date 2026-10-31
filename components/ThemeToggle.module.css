@@ -4,3 +4,12 @@
   display: grid; place-items: center; flex: none;
 }
 .toggle:hover { color: var(--fg); }
+
+/* Light theme shows the moon; dark theme shows the sun. */
+.sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme="light"])) .sun { display: block; }
+  :global(:root:not([data-theme="light"])) .moon { display: none; }
+}
+:global(:root[data-theme="dark"]) .sun { display: block; }
+:global(:root[data-theme="dark"]) .moon { display: none; }
